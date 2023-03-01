@@ -1,16 +1,15 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const tasksInitialState = [];
 
 const tasksSlice = createSlice({
-  name: "tasks",
+  name: 'tasks',
   initialState: tasksInitialState,
   reducers: {
     addTask: {
       reducer(state, action) {
         state.push(action.payload);
       },
-      
     },
     deleteTask(state, action) {
       const index = state.findIndex(task => task.id === action.payload);

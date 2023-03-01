@@ -10,6 +10,11 @@ export const TaskForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const forms = event.currentTarget;
+    if (
+      (forms.elements.title.value || forms.elements.description.value) === ''
+    ) {
+      return console.log('123');
+    }
     dispatch(
       addTask({
         title: forms.elements.title.value,
